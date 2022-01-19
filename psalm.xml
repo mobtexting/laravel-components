@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<psalm
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+    <projectFiles>
+        <directory name="src"/>
+        <ignoreFiles>
+            <directory name="vendor"/>
+            <directory name="tests"/>
+        </ignoreFiles>
+    </projectFiles>
+    <plugins>
+        <pluginClass class="Psalm\LaravelPlugin\Plugin"/>
+    </plugins>
+    <issueHandlers>
+        <UndefinedClass>
+            <errorLevel type="suppress">
+                <referencedClass name="App\Http\Controllers\Controller"/>
+                <referencedClass name="App\Models\User"/>
+                <referencedClass name="TestCase\"/>
+            </errorLevel>
+        </UndefinedClass>
+        <PropertyNotSetInConstructor>
+            <errorLevel type="suppress">
+                <directory name="tests"/>
+            </errorLevel>
+        </PropertyNotSetInConstructor>
+        <MissingConstructor>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+            </errorLevel>
+        </MissingConstructor>
+        <InaccessibleProperty>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+            </errorLevel>
+        </InaccessibleProperty>
+        <!-- @todo: Can't get this to work within a package? Ide helper or migrations somehow? -->
+        <UndefinedMagicPropertyFetch>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+            </errorLevel>
+        </UndefinedMagicPropertyFetch>
+        <UndefinedThisPropertyFetch>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+            </errorLevel>
+        </UndefinedThisPropertyFetch>
+        <UndefinedThisPropertyAssignment>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+            </errorLevel>
+        </UndefinedThisPropertyAssignment>
+        <UndefinedMagicPropertyAssignment>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+            </errorLevel>
+        </UndefinedMagicPropertyAssignment>
+    </issueHandlers>
+</psalm>
