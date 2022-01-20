@@ -1,12 +1,12 @@
 {
     "name": "mobtexting/laravel-components",
-    "description": "Blade components to rapidly build forms with Tailwind CSS Custom Forms and Bootstrap 4.",
+    "description": "Blade components.",
     "keywords": [],
     "license": "MIT",
     "type": "library",
     "authors": [],
     "require": {
-        "php": "^7.4 || ^8.0 || ^8.1",
+        "php": "^8.0 || ^8.1",
         "illuminate/support": "^8.67",
         "symfony/http-foundation": "^5.1.2"
     },

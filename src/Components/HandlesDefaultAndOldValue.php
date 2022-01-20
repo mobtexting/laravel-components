@@ -1,6 +1,8 @@
 <?php
 
-namespace Mobtexting\LaravelComponents;
+declare(strict_types=1);
+
+namespace Mobtexting\LaravelComponents\Components;
 
 trait HandlesDefaultAndOldValue
 {
@@ -26,7 +28,7 @@ trait HandlesDefaultAndOldValue
             return $this->value = old($inputName, $default);
         }
 
-        if ($bind !== false) {
+        if (false !== $bind) {
             $bind = $bind ?: $this->getBoundTarget();
         }
 

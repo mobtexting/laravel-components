@@ -1,10 +1,12 @@
 <?php
 
-namespace Mobtexting\LaravelComponents;
+declare(strict_types=1);
+
+namespace Mobtexting\LaravelComponents\Components;
 
 use Illuminate\Support\Str;
 use Illuminate\View\Component as BaseComponent;
-use ProtoneMedia\LaravelFormComponents\FormDataBinder;
+use Mobtexting\LaravelComponents\FormDataBinder;
 
 abstract class Component extends BaseComponent
 {
@@ -24,15 +26,13 @@ abstract class Component extends BaseComponent
 
         $config = config("laravel-components.components.{$alias}");
 
-        $framework = config("laravel-components.framework");
+        $framework = config('laravel-components.framework');
 
         return str_replace('{framework}', $framework, $config['view']);
     }
 
     /**
      * Returns a boolean wether the form is wired to a Livewire component.
-     *
-     * @return boolean
      */
     public function isWired(): bool
     {
@@ -45,8 +45,6 @@ abstract class Component extends BaseComponent
 
     /**
      * The inversion of 'isWired()'.
-     *
-     * @return boolean
      */
     public function isNotWired(): bool
     {
@@ -67,8 +65,6 @@ abstract class Component extends BaseComponent
 
     /**
      * Generates an ID, once, for this component.
-     *
-     * @return string
      */
     public function id(): string
     {
@@ -85,19 +81,16 @@ abstract class Component extends BaseComponent
 
     /**
      * Generates an ID by the name attribute.
-     *
-     * @return string
      */
     protected function generateIdByName(): string
     {
-        return "auto_id_" . $this->name;
+        return 'auto_id_' . $this->name;
     }
 
     /**
-     * Converts a bracket-notation to a dotted-notation
+     * Converts a bracket-notation to a dotted-notation.
      *
      * @param string $name
-     * @return string
      */
     protected static function convertBracketsToDots($name): string
     {

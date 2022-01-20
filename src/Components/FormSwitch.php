@@ -1,6 +1,8 @@
 <?php
 
-namespace Mobtexting\LaravelComponents;
+declare(strict_types=1);
+
+namespace Mobtexting\LaravelComponents\Components;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;
@@ -19,7 +21,8 @@ class FormSwitch extends Component
     /**
      * Create a new component instance.
      *
-     * @return void
+     * @param mixed      $value
+     * @param null|mixed $bind
      */
     public function __construct(
         string $name,
@@ -29,9 +32,9 @@ class FormSwitch extends Component
         bool $default = false,
         bool $showErrors = true
     ) {
-        $this->name       = $name;
-        $this->label      = $label;
-        $this->value      = $value;
+        $this->name = $name;
+        $this->label = $label;
+        $this->value = $value;
         $this->showErrors = $showErrors;
 
         $inputName = static::convertBracketsToDots(Str::before($name, '[]'));
@@ -49,6 +52,7 @@ class FormSwitch extends Component
 
             if (is_array($boundValue)) {
                 $this->checked = in_array($value, $boundValue);
+
                 return;
             }
 
@@ -58,11 +62,9 @@ class FormSwitch extends Component
 
     /**
      * Generates an ID by the name and value attributes.
-     *
-     * @return string
      */
     protected function generateIdByName(): string
     {
-        return "auto_id_" . $this->name . "_" . $this->value;
+        return 'auto_id_' . $this->name . '_' . $this->value;
     }
 }

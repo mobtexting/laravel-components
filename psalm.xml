@@ -23,11 +23,6 @@
                 <referencedClass name="TestCase\"/>
             </errorLevel>
         </UndefinedClass>
-        <PropertyNotSetInConstructor>
-            <errorLevel type="suppress">
-                <directory name="tests"/>
-            </errorLevel>
-        </PropertyNotSetInConstructor>
         <MissingConstructor>
             <errorLevel type="suppress">
                 <directory name="src"/>

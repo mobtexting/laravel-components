@@ -1,6 +1,8 @@
 <?php
 
-namespace Mobtexting\LaravelComponents;
+declare(strict_types=1);
+
+namespace Mobtexting\LaravelComponents\Components;
 
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
@@ -16,14 +18,29 @@ trait HandlesBoundValues
      * Wether to retrieve the default value as a single
      * attribute or as a collection from the database.
      *
-     * @var boolean
+     * @var bool
      */
     protected $manyRelation = false;
 
     /**
-     * Get an instance of FormDataBinder.
+     * Determine if the cast type is a custom date time cast.
      *
-     * @return FormDataBinder
+     * @param string $cast
+     *
+     * @return bool
+     */
+    protected function isCustomDateTimeCast($cast)
+    {
+        return Str::startsWith($cast, [
+            'date:',
+            'datetime:',
+            'immutable_date:',
+            'immutable_datetime:',
+        ]);
+    }
+
+    /**
+     * Get an instance of FormDataBinder.
      */
     private function getFormDataBinder(): FormDataBinder
     {
@@ -44,12 +61,12 @@ trait HandlesBoundValues
      * Get an item from the latest bound target.
      *
      * @param mixed $bind
-     * @param string $name
+     *
      * @return mixed
      */
     private function getBoundValue($bind, string $name)
     {
-        if ($bind === false) {
+        if (false === $bind) {
             return null;
         }
 
@@ -70,21 +87,16 @@ trait HandlesBoundValues
 
     /**
      * Formats a DateTimeInterface if the key is specified as a date or datetime in the model.
-     *
-     * @param \Illuminate\Database\Eloquent\Model $model
-     * @param string $key
-     * @param DateTimeInterface $date
-     * @return void
      */
     private function formatDateTime(Model $model, string $key, DateTimeInterface $date)
     {
-        if (!config('form-components.use_eloquent_date_casting')) {
+        if (!config('laravel-components.use_eloquent_date_casting')) {
             return $date;
         }
 
         $cast = $model->getCasts()[$key] ?? null;
 
-        if (!$cast || $cast === 'date' || $cast === 'datetime') {
+        if (!$cast || 'date' === $cast || 'datetime' === $cast) {
             return Carbon::instance($date)->toJSON();
         }
 
@@ -96,27 +108,9 @@ trait HandlesBoundValues
     }
 
     /**
-     * Determine if the cast type is a custom date time cast.
-     *
-     * @param  string  $cast
-     * @return bool
-     */
-    protected function isCustomDateTimeCast($cast)
-    {
-        return Str::startsWith($cast, [
-            'date:',
-            'datetime:',
-            'immutable_date:',
-            'immutable_datetime:',
-        ]);
-    }
-
-    /**
      * Returns an array with the attached keys.
      *
      * @param mixed $bind
-     * @param string $name
-     * @return void
      */
     private function getAttachedKeysFromRelation($bind, string $name): ?array
     {
