@@ -1,5 +1,5 @@
 <button
     {{ $attributes->merge(['type' => 'button', 'class' => 'btn btn-secondary'])->except(['label']) }}
 >
-    {{ $label ?? __('Save')  }}
+    {{ (isset($label) && $label != null) ? $label : ($slot->isNotEmpty() ? $slot : __('Submit')) }}
 </button>

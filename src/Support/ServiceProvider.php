@@ -8,6 +8,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Mobtexting\LaravelComponents\FormDataBinder;
+use Illuminate\Support\Str;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -25,6 +26,8 @@ class ServiceProvider extends BaseServiceProvider
                 __DIR__ . '/../../resources/views' => base_path('resources/views/vendor/laravel-components'),
             ], 'views');
         }
+
+        $this->bootSupportMacros();
 
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'laravel-components');
 
@@ -50,5 +53,34 @@ class ServiceProvider extends BaseServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../../config/config.php', 'laravel-components');
 
         $this->app->singleton(FormDataBinder::class, fn () => new FormDataBinder());
+    }
+
+    protected function bootSupportMacros(): self
+    {
+        if (!Str::hasMacro('shortNumber')) {
+            Str::macro('shortNumber', function (int $number, int $decimals = 1) {
+                if ($number < 1_000) {
+                    $format = number_format($number, $decimals);
+                    $suffix = '';
+                } elseif ($number < 1_000_000) {
+                    $format = number_format(floor($number / 100) / 10, $decimals);
+                    $suffix = 'K';
+                } elseif ($number < 1_000_000_000) {
+                    $format = number_format(floor($number / 100000) / 10, $decimals);
+                    $suffix = 'M';
+                } else {
+                    return '🤯';
+                }
+
+                if ($decimals > 0) {
+                    $dotzero = '.' . str_repeat('0', $decimals);
+                    $format = str_replace($dotzero, '', $format);
+                }
+
+                return $format . $suffix;
+            });
+        }
+
+        return $this;
     }
 }
