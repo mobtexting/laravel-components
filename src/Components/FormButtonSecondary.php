@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Mobtexting\LaravelComponents\Components;
 
-class FormButton extends Component
+class FormButtonSecondary extends Component
 {
     public string $label;
     
