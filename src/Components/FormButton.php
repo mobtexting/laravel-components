@@ -6,10 +6,4 @@ namespace Mobtexting\LaravelComponents\Components;
 
 class FormButton extends Component
 {
-    public string $label;
-    
-    public function __construct(string $label = '')
-    {
-       $this->label = $label; 
-    }
 }

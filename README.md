@@ -106,7 +106,7 @@ will be output as
 ##### We can also use label
 
 ```html
-<x-form-button label="Update" />
+<x-form-button :label="Update" />
 ```
 ##### will be output as
 
@@ -143,7 +143,7 @@ But if you want to display some text or icons in button instead of submit you ca
 ##### We can also use label for btn-secondary
 
 ```html
-<x-form-button-secondary label="Submit This" />
+<x-form-button-secondary :label="Submit This" />
 ```
 ##### will be output as
 
@@ -168,7 +168,7 @@ But if you want to display some text or icons in button instead of submit you ca
 ##### We can also use label for btn-cancel
 
 ```html
-<x-form-button-cancel label="Cancel This" />
+<x-form-button-cancel :label="Cancel This" />
 ```
 ##### will be output as
 

@@ -52,16 +52,12 @@ return [
         ],
         'form-button-cancel' => [
             'view' => 'laravel-components::{framework}.button.cancel',
-            'class' => Components\FormButtonCancel::class,
         ],
         'form-button-primary' => [
             'view' => 'laravel-components::{framework}.button.primary',
-            'class' => Components\FormButtonPrimary::class,
         ],
         'form-button-secondary' => [
             'view' => 'laravel-components::{framework}.button.secondary',
-            'class' => Components\FormButtonSecondary::class,
-
         ],
     ],
 ];

@@ -4,6 +4,6 @@
     'title' => $attributes->has('title')
         ? $attributes->get('title')
         : ($slot->isNotEmpty() ? strip_tags($slot) : null),
-]) !!} :label="$label" >
+])->except(['label']) !!} >
     {{ (isset($label) && $label != null) ? $label : ($slot->isNotEmpty() ? $slot : __('Submit')) }}
 </button>
