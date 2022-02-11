@@ -33,6 +33,18 @@ will be output as
 </div>
 ```
 
+#### Checkbox
+
+```html
+<x-theme-checkbox />  
+```
+
+will be output as
+
+```html
+<input type="checkbox" value="1">
+```
+
 #### Select Group
 
 ```html
