@@ -9,30 +9,27 @@
         <directory name="src"/>
         <ignoreFiles>
             <directory name="vendor"/>
-            <directory name="tests"/>
         </ignoreFiles>
     </projectFiles>
     <plugins>
         <pluginClass class="Psalm\LaravelPlugin\Plugin"/>
     </plugins>
     <issueHandlers>
-        <UndefinedClass>
-            <errorLevel type="suppress">
-                <referencedClass name="App\Http\Controllers\Controller"/>
-                <referencedClass name="App\Models\User"/>
-                <referencedClass name="TestCase\"/>
-            </errorLevel>
-        </UndefinedClass>
-        <MissingConstructor>
+        <PropertyNotSetInConstructor>
             <errorLevel type="suppress">
                 <directory name="src"/>
             </errorLevel>
-        </MissingConstructor>
-        <InaccessibleProperty>
+        </PropertyNotSetInConstructor>
+        <InvalidMethodCall>
             <errorLevel type="suppress">
                 <directory name="src"/>
             </errorLevel>
-        </InaccessibleProperty>
+        </InvalidMethodCall>
+        <NoInterfaceProperties>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+            </errorLevel>
+        </NoInterfaceProperties>
         <!-- @todo: Can't get this to work within a package? Ide helper or migrations somehow? -->
         <UndefinedMagicPropertyFetch>
             <errorLevel type="suppress">

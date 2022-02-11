@@ -8,7 +8,7 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
-class FormSwitch extends Component
+class ThemeCheckbox extends Component
 {
     use HandlesValidationErrors;
     use HandlesBoundValues;
@@ -25,7 +25,7 @@ class FormSwitch extends Component
      * @param null|mixed $bind
      */
     public function __construct(
-        string $name,
+        string $name = '',
         string $label = '',
         $value = 1,
         $bind = null,

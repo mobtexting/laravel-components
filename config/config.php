@@ -44,6 +44,9 @@ return [
         'theme-alert-warning' => [
             'view' => 'laravel-components::{framework}.alert.warning',
         ],
+        'theme-alert-danger' => [
+            'view' => 'laravel-components::{framework}.alert.danger',
+        ],
         'theme-alert-help' => [
             'view' => 'laravel-components::{framework}.alert.help',
         ],
@@ -58,6 +61,10 @@ return [
         ],
         'form-button-secondary' => [
             'view' => 'laravel-components::{framework}.button.secondary',
+        ],
+        'theme-checkbox' => [
+            'view' => 'laravel-components::{framework}.theme-checkbox',
+            'class' => Components\ThemeCheckbox::class,
         ],
     ],
 ];

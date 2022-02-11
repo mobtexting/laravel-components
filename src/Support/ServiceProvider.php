@@ -7,8 +7,8 @@ namespace Mobtexting\LaravelComponents\Support;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use Mobtexting\LaravelComponents\FormDataBinder;
 use Illuminate\Support\Str;
+use Mobtexting\LaravelComponents\FormDataBinder;
 
 class ServiceProvider extends BaseServiceProvider
 {
