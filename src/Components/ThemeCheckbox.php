@@ -16,6 +16,7 @@ class ThemeCheckbox extends Component
     public string $name;
     public string $label;
     public $value;
+    public $span;
     public bool $checked = false;
 
     /**
@@ -28,12 +29,14 @@ class ThemeCheckbox extends Component
         string $label = '',
         $value = 1,
         $bind = null,
+        $span = '',
         bool $default = false,
         bool $showErrors = true
     ) {
         $this->name       = $name;
         $this->label      = $label;
         $this->value      = $value;
+        $this->span       = $span;
         $this->showErrors = $showErrors;
 
         $inputName = static::convertBracketsToDots(Str::before($name, '[]'));

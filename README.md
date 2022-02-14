@@ -36,13 +36,16 @@ will be output as
 #### Checkbox
 
 ```html
-<x-theme-checkbox />  
+<x-theme-checkbox span="Name" name="segment" value="id" />  
 ```
 
 will be output as
 
 ```html
-<input type="checkbox" value="1">
+<label class="custom-control custom-checkbox custom-control-inline">
+    <input type="checkbox" class="custom-control-input" name="segment" value="id">
+    <span class="custom-control-label"> Name </span>
+</label>
 ```
 
 #### Select Group
