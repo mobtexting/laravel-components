@@ -1,4 +1,3 @@
-@push('modals')
 <div class="modal modal-box {{ ($open ?? false) ? '' : 'd-none' }}" data-modal="{{ $name }}" id="{{ $name }}" data-modal-backdrop>
     <div class="modal-dialog animated bounceInRight">
         <div class="modal-content">
@@ -18,4 +17,3 @@
         </div>
     </div>
 </div>
-@endpush

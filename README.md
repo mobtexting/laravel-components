@@ -71,7 +71,6 @@ will be output as
 ##### will be output as
 
 ```html
-@push("modals")
 <div class="modal modal-box" data-modal="preview" id="preview" data-modal-backdrop>
     <div class="modal-dialog animated bounceInRight">
         <div class="modal-content">
@@ -89,7 +88,6 @@ will be output as
         </div>
     </div>
 </div>
-@endpush
 ```
 
 #### Buttons
