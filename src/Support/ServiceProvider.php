@@ -35,7 +35,7 @@ class ServiceProvider extends BaseServiceProvider
         $framework = config('laravel-components.framework');
 
         Collection::make(config('laravel-components.components'))->each(
-            function ($component, $alias) use ($prefix, $framework): void {
+            function (array $component, string $alias) use ($prefix, $framework): void {
                 if (isset($component['class'])) {
                     Blade::component($alias, $component['class'], $prefix);
                 } else {

@@ -15,8 +15,11 @@ class FormSwitch extends Component
 
     public string $name;
     public string $label;
-    public $value;
     public bool $checked = false;
+    /**
+     * @var mixed
+     */
+    public $value;
 
     /**
      * Create a new component instance.

@@ -66,5 +66,13 @@ return [
             'view' => 'laravel-components::{framework}.theme-checkbox',
             'class' => Components\ThemeCheckbox::class,
         ],
+        'filter-search' => [
+            'view' => 'laravel-components::{framework}.filters.search',
+            'class' => Components\FilterSearch::class,
+        ],
+        'filter-dates' => [
+            'view' => 'laravel-components::{framework}.filters.dates',
+            'class' => Components\FilterDates::class,
+        ],
     ],
 ];

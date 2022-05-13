@@ -15,6 +15,9 @@ class ThemeCheckbox extends Component
 
     public string $name;
     public string $label;
+    /**
+     * @var mixed
+     */
     public $value;
     public bool $checked = false;
 

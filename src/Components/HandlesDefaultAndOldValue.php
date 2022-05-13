@@ -8,12 +8,19 @@ trait HandlesDefaultAndOldValue
 {
     use HandlesBoundValues;
 
+    /**
+     * Undocumented function.
+     *
+     * @param mixed  $bind
+     * @param mixed  $default
+     * @param string $language
+     */
     private function setValue(
         string $name,
         $bind = null,
         $default = null,
         $language = null
-    ) {
+    ): void {
         if ($this->isWired()) {
             return;
         }
@@ -25,7 +32,9 @@ trait HandlesDefaultAndOldValue
 
             $default = is_null($boundValue) ? $default : $boundValue;
 
-            return $this->value = old($inputName, $default);
+            $this->value = old($inputName, $default);
+
+            return;
         }
 
         if (false !== $bind) {

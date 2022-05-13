@@ -17,13 +17,31 @@ will be output as
 #### Switch
 
 ```html
-<x-form-switch label="Test" name="status" value="status" />
+<x-form-switch label="Test" name="status" value="1" default="1" />
 ```
 
 will be output as
 
 ```html
 <div class="form-group">
+    <label class="custom-switch">
+        <input class="custom-switch-input" type="checkbox" value="status" name="status" />
+
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description text-upper">Test</span>
+    </label>
+</div>
+```
+
+```html
+<x-form-switch label="Test" name="status" title="Form group label" value="1" default="1" />
+```
+
+will be output as
+
+```html
+<div class="form-group">
+    <label class="form-label">Form group label</label>
     <label class="custom-switch">
         <input class="custom-switch-input" type="checkbox" value="status" name="status" />
 
@@ -99,9 +117,7 @@ will be output as
 ##### will be output as
 
 ```html
-<button type="submit" class="btn btn-primary">
-    Submit
-</button>
+<button type="submit" class="btn btn-primary">Submit</button>
 ```
 
 ##### We can also use label
@@ -113,9 +129,7 @@ will be output as
 ##### will be output as
 
 ```html
-<button type="submit" class="btn btn-primary">
-    Update
-</button>
+<button type="submit" class="btn btn-primary">Update</button>
 ```
 
 But if you want to display some text or icons in button instead of submit you can use it as a \$slot
@@ -129,9 +143,7 @@ But if you want to display some text or icons in button instead of submit you ca
 ##### it will be output as
 
 ```html
-<button type="submit" class="btn btn-primary">
-    Update
-</button>
+<button type="submit" class="btn btn-primary">Update</button>
 ```
 
 ##### For button with btn-secondary we can use
@@ -143,9 +155,7 @@ But if you want to display some text or icons in button instead of submit you ca
 ##### will be output as
 
 ```html
-<button type="button" class="btn btn-secondary">
-    Submit
-</button>
+<button type="button" class="btn btn-secondary">Submit</button>
 ```
 
 ##### We can also use label for btn-secondary
@@ -157,9 +167,7 @@ But if you want to display some text or icons in button instead of submit you ca
 ##### will be output as
 
 ```html
-<button type="button" class="btn btn-secondary">
-    Submit This
-</button>
+<button type="button" class="btn btn-secondary">Submit This</button>
 ```
 
 ##### For button with btn-cancel we can use
@@ -171,9 +179,7 @@ But if you want to display some text or icons in button instead of submit you ca
 ##### will be output as
 
 ```html
-<button type="button" class="btn btn-cancel" data-modal-dismiss>
-    Cancel
-</button>
+<button type="button" class="btn btn-cancel" data-modal-dismiss>Cancel</button>
 ```
 
 ##### We can also use label for btn-cancel
@@ -185,9 +191,7 @@ But if you want to display some text or icons in button instead of submit you ca
 ##### will be output as
 
 ```html
-<button type="button" class="btn btn-cancel">
-    Cancel This
-</button>
+<button type="button" class="btn btn-cancel">Cancel This</button>
 ```
 
 ##### Theme Checkbox
@@ -201,6 +205,110 @@ But if you want to display some text or icons in button instead of submit you ca
     <input type="checkbox" name="box" class="custom-control-input" data-segments-all />
     <span class="custom-control-label">Select All</span>
 </label>
+```
+
+#### Dates Filters
+
+```
+<x-filter-dates />
+```
+
+```html
+<div class="selectgroup">
+    <label class="selectgroup-item">
+        <input type="radio" name="time" value="" date-value="" data-dateranges-stats="" class="selectgroup-input" />
+        <span date-html="" class="selectgroup-button">custom</span>
+    </label>
+    <label class="selectgroup-item">
+        <input
+            type="radio"
+            class="selectgroup-input"
+            data-chart-time="data-chart-time"
+            value="1h"
+            name="time"
+            id="auto_id_time_1h"
+        />
+        <span class="selectgroup-button">1h </span>
+    </label>
+    <label class="selectgroup-item">
+        <input
+            type="radio"
+            class="selectgroup-input"
+            data-chart-time="data-chart-time"
+            value="3h"
+            name="time"
+            id="auto_id_time_3h"
+        />
+        <span class="selectgroup-button">3h </span>
+    </label>
+    <label class="selectgroup-item">
+        <input
+            type="radio"
+            class="selectgroup-input"
+            data-chart-time="data-chart-time"
+            value="6h"
+            name="time"
+            id="auto_id_time_6h"
+        />
+        <span class="selectgroup-button">6h </span>
+    </label>
+    <label class="selectgroup-item">
+        <input
+            type="radio"
+            class="selectgroup-input"
+            data-chart-time="data-chart-time"
+            value="12h"
+            name="time"
+            id="auto_id_time_12h"
+        />
+        <span class="selectgroup-button">12h </span>
+    </label>
+    <label class="selectgroup-item">
+        <input
+            type="radio"
+            class="selectgroup-input"
+            data-chart-time="data-chart-time"
+            value="1d"
+            name="time"
+            id="auto_id_time_1d"
+            checked="checked"
+        />
+        <span class="selectgroup-button">1d </span>
+    </label>
+    <label class="selectgroup-item">
+        <input
+            type="radio"
+            class="selectgroup-input"
+            data-chart-time="data-chart-time"
+            value="1w"
+            name="time"
+            id="auto_id_time_1w"
+        />
+        <span class="selectgroup-button">1w </span>
+    </label>
+    <label class="selectgroup-item">
+        <input
+            type="radio"
+            class="selectgroup-input"
+            data-chart-time="data-chart-time"
+            value="1m"
+            name="time"
+            id="auto_id_time_1m"
+        />
+        <span class="selectgroup-button">1m </span>
+    </label>
+    <label class="selectgroup-item">
+        <input
+            type="radio"
+            class="selectgroup-input"
+            data-chart-time="data-chart-time"
+            value="3m"
+            name="time"
+            id="auto_id_time_3m"
+        />
+        <span class="selectgroup-button">3m </span>
+    </label>
+</div>
 ```
 
 ### Testing

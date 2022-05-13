@@ -7,7 +7,7 @@
     "authors": [],
     "require": {
         "php": "^8.0|^8.1",
-        "illuminate/support": "^8.67"
+        "protonemedia/laravel-form-components": "^3.6"
     },
     "require-dev": {
         "livewire/livewire": "^2.0",
