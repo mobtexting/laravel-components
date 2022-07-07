@@ -74,5 +74,13 @@ return [
             'view' => 'laravel-components::{framework}.filters.dates',
             'class' => Components\FilterDates::class,
         ],
+        'script' => [
+            'view' => 'laravel-components::{framework}.script',
+            'class' => Components\Script::class,
+        ],
+        'style' => [
+            'view' => 'laravel-components::{framework}.style',
+            'class' => Components\Style::class,
+        ],
     ],
 ];
