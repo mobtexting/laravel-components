@@ -82,5 +82,9 @@ return [
             'view' => 'laravel-components::{framework}.style',
             'class' => Components\Style::class,
         ],
+        'form-file' => [
+            'view' => 'laravel-components::{framework}.form-file',
+            'class' => Components\FormFile::class,
+        ],
     ],
 ];
