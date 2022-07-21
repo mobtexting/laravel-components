@@ -1,6 +1,6 @@
 <button {!! $attributes->merge([
     'class' => 'btn' . ($attributes->has('class') ? null : ' btn-primary'),
-    'type' => 'submit',
+    'type' => 'button',
     'title' => $attributes->has('title')
         ? $attributes->get('title')
         : ($slot->isNotEmpty() ? strip_tags($slot) : null),
