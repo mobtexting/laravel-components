@@ -44,6 +44,9 @@ return [
         'theme-alert-warning' => [
             'view' => 'laravel-components::{framework}.alert.warning',
         ],
+        'theme-alert-danger' => [
+            'view' => 'laravel-components::{framework}.alert.danger',
+        ],
         'theme-alert-help' => [
             'view' => 'laravel-components::{framework}.alert.help',
         ],
@@ -58,6 +61,30 @@ return [
         ],
         'form-button-secondary' => [
             'view' => 'laravel-components::{framework}.button.secondary',
+        ],
+        'theme-checkbox' => [
+            'view' => 'laravel-components::{framework}.theme-checkbox',
+            'class' => Components\ThemeCheckbox::class,
+        ],
+        'filter-search' => [
+            'view' => 'laravel-components::{framework}.filters.search',
+            'class' => Components\FilterSearch::class,
+        ],
+        'filter-dates' => [
+            'view' => 'laravel-components::{framework}.filters.dates',
+            'class' => Components\FilterDates::class,
+        ],
+        'script' => [
+            'view' => 'laravel-components::{framework}.script',
+            'class' => Components\Script::class,
+        ],
+        'style' => [
+            'view' => 'laravel-components::{framework}.style',
+            'class' => Components\Style::class,
+        ],
+        'form-file' => [
+            'view' => 'laravel-components::{framework}.form-file',
+            'class' => Components\FormFile::class,
         ],
         'action-link' => [
             'view' => 'laravel-components::{framework}.action-link',

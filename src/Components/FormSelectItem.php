@@ -11,9 +11,16 @@ class FormSelectItem extends Component
 
     public string $name;
     public string $label;
+    /**
+     * @var mixed
+     */
     public $value;
     public bool $checked = false;
 
+    /**
+     * @param mixed $value
+     * @param mixed $bind
+     */
     public function __construct(
         string $name,
         string $label = '',

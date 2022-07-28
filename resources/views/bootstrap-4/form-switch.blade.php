@@ -1,4 +1,8 @@
 <div class="form-group">
+    @if ($attributes->has('title'))
+        <label class="form-label">{{ $attributes->get('title') }}</label>
+    @endif
+
     <label class="custom-switch">
     <input {!! $attributes->merge(['class' => 'custom-switch-input ' . ($hasError($name) ? 'is-invalid' : '')]) !!}
         type="checkbox"

@@ -15,11 +15,15 @@ class FormDataBinder
 
     /**
      * Wired to a Livewire component.
+     *
+     * @var mixed
      */
     private $wire = false;
 
     /**
      * Whether the default wire has been verified once.
+     *
+     *  @var bool
      */
     private $loadDefaultWire = true;
 
