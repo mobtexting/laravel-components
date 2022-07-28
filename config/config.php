@@ -59,5 +59,9 @@ return [
         'form-button-secondary' => [
             'view' => 'laravel-components::{framework}.button.secondary',
         ],
+        'action-link' => [
+            'view' => 'laravel-components::{framework}.action-link',
+            'class' => Components\ActionLink::class,
+        ],
     ],
 ];
