@@ -1,5 +1,5 @@
 <label class="custom-control custom-checkbox custom-control-inline">
-    <input {!! $attributes->merge(['class' => 'custom-control-input' . ($hasError($name) ? 'is-invalid' : '')]) !!}
+    <input {!! $attributes->merge(['class' => 'custom-control-input ' . ($hasError($name) ? 'is-invalid' : '')]) !!}
         type="checkbox"
         value="{{ $value }}"
 
@@ -10,7 +10,7 @@
         @if($name)
             name="{{ $name }}"
         @endif
-        
+
         @if($label && !$attributes->get('id'))
             id="{{ $id() }}"
         @endif
@@ -19,13 +19,11 @@
             checked="checked"
         @endif
     />
-
-    <x-form-label :label="$label" :for="$attributes->get('id') ?: $id()" class="form-check-label" />
-
-    {!! $help ?? null !!}
-
-    @if($hasErrorAndShow($name))
-        <x-form-errors :name="$name" />
-    @endif
-    <span class="custom-control-label">{{ $span }}</span>
+    <span class="custom-control-label">{{ $label }}</span>
 </label>
+
+{!! $help ?? null !!}
+
+@if($hasErrorAndShow($name))
+    <x-form-errors :name="$name" />
+@endif

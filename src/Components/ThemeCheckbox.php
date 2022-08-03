@@ -15,33 +15,35 @@ class ThemeCheckbox extends Component
 
     public string $name;
     public string $label;
+    /**
+     * @var mixed
+     */
     public $value;
-    public $span;
     public bool $checked = false;
 
     /**
      * Create a new component instance.
      *
-     * @return void
+     * @param mixed      $value
+     * @param null|mixed $bind
      */
     public function __construct(
         string $name = '',
         string $label = '',
         $value = 1,
         $bind = null,
-        $span = '',
         bool $default = false,
         bool $showErrors = true
     ) {
-        $this->name       = $name;
-        $this->label      = $label;
-        $this->value      = $value;
-        $this->span       = $span;
+        $this->name = $name;
+        $this->label = $label;
+        $this->value = $value;
         $this->showErrors = $showErrors;
 
         $inputName = static::convertBracketsToDots(Str::before($name, '[]'));
+        $oldData = old($inputName);
 
-        if ($oldData = old($inputName)) {
+        if ($oldData) {
             $this->checked = in_array($value, Arr::wrap($oldData));
         }
 
@@ -54,6 +56,7 @@ class ThemeCheckbox extends Component
 
             if (is_array($boundValue)) {
                 $this->checked = in_array($value, $boundValue);
+
                 return;
             }
 
@@ -63,11 +66,9 @@ class ThemeCheckbox extends Component
 
     /**
      * Generates an ID by the name and value attributes.
-     *
-     * @return string
      */
     protected function generateIdByName(): string
     {
-        return "auto_id_" . $this->name . "_" . $this->value;
+        return 'auto_id_' . $this->name . '_' . $this->value;
     }
 }

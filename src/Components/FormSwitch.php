@@ -15,8 +15,11 @@ class FormSwitch extends Component
 
     public string $name;
     public string $label;
-    public $value;
     public bool $checked = false;
+    /**
+     * @var mixed
+     */
+    public $value;
 
     /**
      * Create a new component instance.
@@ -38,8 +41,9 @@ class FormSwitch extends Component
         $this->showErrors = $showErrors;
 
         $inputName = static::convertBracketsToDots(Str::before($name, '[]'));
+        $oldData = old($inputName);
 
-        if ($oldData = old($inputName)) {
+        if ($oldData) {
             $this->checked = in_array($value, Arr::wrap($oldData));
         }
 
