@@ -86,5 +86,9 @@ return [
             'view' => 'laravel-components::{framework}.form-file',
             'class' => Components\FormFile::class,
         ],
+        'action-link' => [
+            'view' => 'laravel-components::{framework}.action-link',
+            'class' => Components\ActionLink::class,
+        ],
     ],
 ];
