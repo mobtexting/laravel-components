@@ -25,6 +25,21 @@
                 <directory name="src"/>
             </errorLevel>
         </InvalidMethodCall>
+        <PossiblyNullReference>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+            </errorLevel>
+        </PossiblyNullReference>
+        <RedundantConditionGivenDocblockType>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+            </errorLevel>
+        </RedundantConditionGivenDocblockType>
+        <MissingClosureReturnType>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+            </errorLevel>
+        </MissingClosureReturnType>
         <NoInterfaceProperties>
             <errorLevel type="suppress">
                 <directory name="src"/>

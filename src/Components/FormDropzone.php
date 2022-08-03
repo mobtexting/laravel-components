@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Mobtexting\LaravelComponents\Components;
 
-class FormFile extends Component
+class FormDropzone extends Component
 {
     use HandlesValidationErrors;
     use HandlesDefaultAndOldValue;

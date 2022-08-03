@@ -54,14 +54,14 @@ will be output as
 #### Checkbox
 
 ```html
-<x-theme-checkbox span="Name" name="segment" value="id" />  
+<x-theme-checkbox span="Name" name="segment" value="id" />
 ```
 
 will be output as
 
 ```html
 <label class="custom-control custom-checkbox custom-control-inline">
-    <input type="checkbox" class="custom-control-input" name="segment" value="id">
+    <input type="checkbox" class="custom-control-input" name="segment" value="id" />
     <span class="custom-control-label"> Name </span>
 </label>
 ```
@@ -324,6 +324,26 @@ But if you want to display some text or icons in button instead of submit you ca
         <span class="selectgroup-button">3m </span>
     </label>
 </div>
+```
+
+### Filepond/ File
+
+```
+<x-form-file name="file" label="Please upload file" data-upload-prefix="package" />
+
+<x-form-file name="file" label="Please upload file" data-upload-prefix="package">
+    @slot('help)
+        <span>Allow only jpg, png files</span>
+    @endslot
+</x-form-file>
+
+```
+
+### Drop Zone
+
+```
+<x-form-dropzone name="file" label="Please upload file" />
+
 ```
 
 ### Testing

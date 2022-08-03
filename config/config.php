@@ -32,10 +32,6 @@ return [
             'view' => 'laravel-components::{framework}.form-select-item',
             'class' => Components\FormSelectItem::class,
         ],
-        'theme-checkbox' => [
-            'view' => 'laravel-components::{framework}.theme-checkbox',
-            'class' => Components\ThemeCheckbox::class,
-        ],
         'theme-counter' => [
             'view' => 'laravel-components::{framework}.theme-counter',
         ],
@@ -93,6 +89,10 @@ return [
         'action-link' => [
             'view' => 'laravel-components::{framework}.action-link',
             'class' => Components\ActionLink::class,
+        ],
+        'form-dropzone' => [
+            'view' => 'laravel-components::{framework}.form-dropzone',
+            'class' => Components\FormDropzone::class,
         ],
     ],
 ];

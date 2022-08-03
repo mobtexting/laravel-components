@@ -87,6 +87,8 @@ trait HandlesBoundValues
 
     /**
      * Formats a DateTimeInterface if the key is specified as a date or datetime in the model.
+     *
+     * @return DateTimeInterface|string
      */
     private function formatDateTime(Model $model, string $key, DateTimeInterface $date)
     {
