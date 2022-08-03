@@ -32,6 +32,10 @@ return [
             'view' => 'laravel-components::{framework}.form-select-item',
             'class' => Components\FormSelectItem::class,
         ],
+        'theme-checkbox' => [
+            'view' => 'laravel-components::{framework}.theme-checkbox',
+            'class' => Components\ThemeCheckbox::class,
+        ],
         'theme-counter' => [
             'view' => 'laravel-components::{framework}.theme-counter',
         ],
