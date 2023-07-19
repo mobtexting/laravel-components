@@ -94,5 +94,9 @@ return [
             'view' => 'laravel-components::{framework}.form-dropzone',
             'class' => Components\FormDropzone::class,
         ],
+        'link' => [
+            'view' => 'laravel-components::{framework}.link',
+            'class' => Components\Link::class,
+        ],
     ],
 ];

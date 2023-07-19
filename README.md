@@ -346,6 +346,18 @@ But if you want to display some text or icons in button instead of submit you ca
 
 ```
 
+#### Link
+
+```html
+<x-link href="/post" />Submit</link>
+```
+
+##### will be output as
+
+```html
+<a href="/link">Submit</a>
+```
+
 ### Testing
 
 ```bash
