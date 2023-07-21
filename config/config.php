@@ -98,5 +98,32 @@ return [
             'view' => 'laravel-components::{framework}.link',
             'class' => Components\Link::class,
         ],
+        'card' => [
+            'view' => 'laravel-components::{framework}.card.index',
+        ],
+        'card-header' => [
+            'view' => 'laravel-components::{framework}.card.header',
+        ],
+        'card-body' => [
+            'view' => 'laravel-components::{framework}.card.body',
+        ],
+        'card-footer' => [
+            'view' => 'laravel-components::{framework}.card.footer',
+        ],
+        'card-filter' => [
+            'view' => 'laravel-components::{framework}.card.filter',
+        ],
+        'table' => [
+            'view' => 'laravel-components::{framework}.table.index',
+        ],
+        'table-header' => [
+            'view' => 'laravel-components::{framework}.table.header',
+        ],
+        'table-body' => [
+            'view' => 'laravel-components::{framework}.table.body',
+        ],
+        'table-footer' => [
+            'view' => 'laravel-components::{framework}.table.footer',
+        ],
     ],
 ];
