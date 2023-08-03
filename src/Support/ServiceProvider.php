@@ -43,6 +43,8 @@ class ServiceProvider extends BaseServiceProvider
                 }
             }
         );
+
+        Blade::anonymousComponentPath(__DIR__.'/../../resources/views/components', 'theme');
     }
 
     /**
