@@ -44,7 +44,7 @@ class ServiceProvider extends BaseServiceProvider
             }
         );
 
-        Blade::anonymousComponentPath(__DIR__.'/../../resources/views/components', 'theme');
+        Blade::anonymousComponentPath(__DIR__ . '/../../resources/views/components/' . $framework, $prefix . 'theme');
     }
 
     /**

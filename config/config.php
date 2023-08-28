@@ -125,5 +125,9 @@ return [
         'table-footer' => [
             'view' => 'laravel-components::{framework}.table.footer',
         ],
+        'avatar' => [
+            'view' => 'laravel-components::{framework}.avatar',
+            'class' => Components\Avatar::class,
+        ],
     ],
 ];
