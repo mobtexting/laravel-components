@@ -6,20 +6,23 @@ namespace Mobtexting\LaravelComponents\Components;
 
 class FormSelectItem extends Component
 {
-    use HandlesValidationErrors;
     use HandlesBoundValues;
+    use HandlesValidationErrors;
 
     public string $name;
+
     public string $label;
+
     /**
      * @var mixed
      */
     public $value;
+
     public bool $checked = false;
 
     /**
-     * @param mixed $value
-     * @param mixed $bind
+     * @param  mixed  $value
+     * @param  mixed  $bind
      */
     public function __construct(
         string $name,
@@ -40,10 +43,10 @@ class FormSelectItem extends Component
             $this->checked = old($inputName) == $value;
         }
 
-        if (!session()->hasOldInput() && $this->isNotWired()) {
+        if (! session()->hasOldInput() && $this->isNotWired()) {
             $boundValue = $this->getBoundValue($bind, $name);
 
-            if (!is_null($boundValue)) {
+            if (! is_null($boundValue)) {
                 $this->checked = $boundValue == $this->value;
             } else {
                 $this->checked = $default;
@@ -56,6 +59,6 @@ class FormSelectItem extends Component
      */
     protected function generateIdByName(): string
     {
-        return 'auto_id_' . $this->name . '_' . $this->value;
+        return 'auto_id_'.$this->name.'_'.$this->value;
     }
 }

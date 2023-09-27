@@ -5,7 +5,7 @@ declare(strict_types=1);
 $finder = Symfony\Component\Finder\Finder::create()
     ->notPath('vendor')
     ->in([
-        __DIR__ . '/src',
+        __DIR__.'/src',
     ])
     ->name('*.php')
     ->notName('*.blade.php')

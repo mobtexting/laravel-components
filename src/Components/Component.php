@@ -48,13 +48,11 @@ abstract class Component extends BaseComponent
      */
     public function isNotWired(): bool
     {
-        return !$this->isWired();
+        return ! $this->isWired();
     }
 
     /**
      * Returns the optional wire modifier.
-     *
-     * @return string
      */
     public function wireModifier(): ?string
     {
@@ -84,13 +82,13 @@ abstract class Component extends BaseComponent
      */
     protected function generateIdByName(): string
     {
-        return 'auto_id_' . $this->name;
+        return 'auto_id_'.$this->name;
     }
 
     /**
      * Converts a bracket-notation to a dotted-notation.
      *
-     * @param string $name
+     * @param  string  $name
      */
     protected static function convertBracketsToDots($name): string
     {

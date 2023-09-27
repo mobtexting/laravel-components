@@ -6,18 +6,19 @@ namespace Mobtexting\LaravelComponents\Components;
 
 class FormDropzone extends Component
 {
-    use HandlesValidationErrors;
     use HandlesDefaultAndOldValue;
+    use HandlesValidationErrors;
 
     public string $name;
+
     public string $label;
 
     /**
      * Create a new component instance.
      *
-     * @param null|mixed $bind
-     * @param null|mixed $default
-     * @param null|mixed $language
+     * @param  null|mixed  $bind
+     * @param  null|mixed  $default
+     * @param  null|mixed  $language
      */
     public function __construct(
         string $name,

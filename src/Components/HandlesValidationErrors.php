@@ -33,7 +33,7 @@ trait HandlesValidationErrors
 
         $errorBag = $this->getErrorBag($bag);
 
-        return $errorBag->has($name) || $errorBag->has($name . '.*');
+        return $errorBag->has($name) || $errorBag->has($name.'.*');
     }
 
     /**

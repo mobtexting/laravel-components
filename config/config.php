@@ -5,10 +5,10 @@ declare(strict_types=1);
 use Mobtexting\LaravelComponents\Components;
 
 return [
-    'prefix' => '',
+    'prefix' => env('COMPONENTS_PREFIX'),
 
     // tailwind | tailwind-2 | tailwind-forms-simple | bootstrap-4 | bootstrap-5
-    'framework' => 'bootstrap-4',
+    'framework' => env('COMPONENTS_FRAMEWORK', 'bootstrap-4'),
 
     'use_eloquent_date_casting' => false,
 

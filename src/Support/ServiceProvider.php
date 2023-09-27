@@ -19,17 +19,17 @@ class ServiceProvider extends BaseServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../../config/config.php' => config_path('laravel-components.php'),
+                __DIR__.'/../../config/config.php' => config_path('laravel-components.php'),
             ], 'config');
 
             $this->publishes([
-                __DIR__ . '/../../resources/views' => base_path('resources/views/vendor/laravel-components'),
+                __DIR__.'/../../resources/views' => base_path('resources/views/vendor/laravel-components'),
             ], 'views');
         }
 
         $this->bootSupportMacros();
 
-        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'laravel-components');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'laravel-components');
 
         $prefix = config('laravel-components.prefix');
         $framework = config('laravel-components.framework');
@@ -44,7 +44,7 @@ class ServiceProvider extends BaseServiceProvider
             }
         );
 
-        Blade::anonymousComponentPath(__DIR__ . '/../../resources/views/components/' . $framework, $prefix . 'theme');
+        Blade::anonymousComponentPath(__DIR__.'/../../resources/views/components/'.$framework, $prefix.'theme');
     }
 
     /**
@@ -52,14 +52,14 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../../config/config.php', 'laravel-components');
+        $this->mergeConfigFrom(__DIR__.'/../../config/config.php', 'laravel-components');
 
         $this->app->singleton(FormDataBinder::class, fn () => new FormDataBinder());
     }
 
     protected function bootSupportMacros(): self
     {
-        if (!Str::hasMacro('shortNumber')) {
+        if (! Str::hasMacro('shortNumber')) {
             Str::macro('shortNumber', function (int $number, int $decimals = 1) {
                 if ($number < 1_000) {
                     $format = number_format($number, $decimals);
@@ -75,11 +75,11 @@ class ServiceProvider extends BaseServiceProvider
                 }
 
                 if ($decimals > 0) {
-                    $dotzero = '.' . str_repeat('0', $decimals);
+                    $dotzero = '.'.str_repeat('0', $decimals);
                     $format = str_replace($dotzero, '', $format);
                 }
 
-                return $format . $suffix;
+                return $format.$suffix;
             });
         }
 

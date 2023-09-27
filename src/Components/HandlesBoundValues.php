@@ -25,8 +25,7 @@ trait HandlesBoundValues
     /**
      * Determine if the cast type is a custom date time cast.
      *
-     * @param string $cast
-     *
+     * @param  string  $cast
      * @return bool
      */
     protected function isCustomDateTimeCast($cast)
@@ -60,13 +59,12 @@ trait HandlesBoundValues
     /**
      * Get an item from the latest bound target.
      *
-     * @param mixed $bind
-     *
+     * @param  mixed  $bind
      * @return mixed
      */
     private function getBoundValue($bind, string $name)
     {
-        if (false === $bind) {
+        if ($bind === false) {
             return null;
         }
 
@@ -92,13 +90,13 @@ trait HandlesBoundValues
      */
     private function formatDateTime(Model $model, string $key, DateTimeInterface $date)
     {
-        if (!config('laravel-components.use_eloquent_date_casting')) {
+        if (! config('laravel-components.use_eloquent_date_casting')) {
             return $date;
         }
 
         $cast = $model->getCasts()[$key] ?? null;
 
-        if (!$cast || 'date' === $cast || 'datetime' === $cast) {
+        if (! $cast || $cast === 'date' || $cast === 'datetime') {
             return Carbon::instance($date)->toJSON();
         }
 
@@ -112,11 +110,11 @@ trait HandlesBoundValues
     /**
      * Returns an array with the attached keys.
      *
-     * @param mixed $bind
+     * @param  mixed  $bind
      */
     private function getAttachedKeysFromRelation($bind, string $name): ?array
     {
-        if (!$bind instanceof Model) {
+        if (! $bind instanceof Model) {
             return data_get($bind, $name);
         }
 

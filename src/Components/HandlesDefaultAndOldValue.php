@@ -11,9 +11,9 @@ trait HandlesDefaultAndOldValue
     /**
      * Undocumented function.
      *
-     * @param mixed  $bind
-     * @param mixed  $default
-     * @param string $language
+     * @param  mixed  $bind
+     * @param  mixed  $default
+     * @param  string  $language
      */
     private function setValue(
         string $name,
@@ -27,7 +27,7 @@ trait HandlesDefaultAndOldValue
 
         $inputName = static::convertBracketsToDots($name);
 
-        if (!$language) {
+        if (! $language) {
             $boundValue = $this->getBoundValue($bind, $inputName);
 
             $default = is_null($boundValue) ? $default : $boundValue;
@@ -37,7 +37,7 @@ trait HandlesDefaultAndOldValue
             return;
         }
 
-        if (false !== $bind) {
+        if ($bind !== false) {
             $bind = $bind ?: $this->getBoundTarget();
         }
 

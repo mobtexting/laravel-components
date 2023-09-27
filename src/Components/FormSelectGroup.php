@@ -9,7 +9,9 @@ class FormSelectGroup extends Component
     use HandlesValidationErrors;
 
     public string $name;
+
     public string $label;
+
     public bool $inline = false;
 
     /**
