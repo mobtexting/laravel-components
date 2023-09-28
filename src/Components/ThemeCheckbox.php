@@ -10,22 +10,25 @@ use Illuminate\Support\Str;
 
 class ThemeCheckbox extends Component
 {
-    use HandlesValidationErrors;
     use HandlesBoundValues;
+    use HandlesValidationErrors;
 
     public string $name;
+
     public string $label;
+
     /**
      * @var mixed
      */
     public $value;
+
     public bool $checked = false;
 
     /**
      * Create a new component instance.
      *
-     * @param mixed      $value
-     * @param null|mixed $bind
+     * @param  mixed  $value
+     * @param  null|mixed  $bind
      */
     public function __construct(
         string $name = '',
@@ -47,7 +50,7 @@ class ThemeCheckbox extends Component
             $this->checked = in_array($value, Arr::wrap($oldData));
         }
 
-        if (!session()->hasOldInput() && $this->isNotWired()) {
+        if (! session()->hasOldInput() && $this->isNotWired()) {
             $boundValue = $this->getBoundValue($bind, $inputName);
 
             if ($boundValue instanceof Arrayable) {
@@ -69,6 +72,6 @@ class ThemeCheckbox extends Component
      */
     protected function generateIdByName(): string
     {
-        return 'auto_id_' . $this->name . '_' . $this->value;
+        return 'auto_id_'.$this->name.'_'.$this->value;
     }
 }

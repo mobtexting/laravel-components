@@ -30,7 +30,7 @@ class FormDataBinder
     /**
      * Bind a target to the current instance.
      *
-     * @param mixed $target
+     * @param  mixed  $target
      */
     public function bind($target): void
     {
@@ -65,12 +65,12 @@ class FormDataBinder
 
             $defaultWire = config('laravel-components.default_wire');
 
-            if (false !== $defaultWire) {
+            if ($defaultWire !== false) {
                 $this->wire = $defaultWire;
             }
         }
 
-        return false !== $this->wire;
+        return $this->wire !== false;
     }
 
     /**
@@ -84,11 +84,11 @@ class FormDataBinder
     /**
      * Enable Livewire binding with an optional modifier.
      *
-     * @param bool|string $modifier
+     * @param  bool|string  $modifier
      */
     public function wire($modifier = null): void
     {
-        $this->wire = false !== $modifier
+        $this->wire = $modifier !== false
             ? ($modifier ?: null)
             : false;
 

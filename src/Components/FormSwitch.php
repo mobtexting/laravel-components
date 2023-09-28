@@ -10,12 +10,15 @@ use Illuminate\Support\Str;
 
 class FormSwitch extends Component
 {
-    use HandlesValidationErrors;
     use HandlesBoundValues;
+    use HandlesValidationErrors;
 
     public string $name;
+
     public string $label;
+
     public bool $checked = false;
+
     /**
      * @var mixed
      */
@@ -24,8 +27,8 @@ class FormSwitch extends Component
     /**
      * Create a new component instance.
      *
-     * @param mixed      $value
-     * @param null|mixed $bind
+     * @param  mixed  $value
+     * @param  null|mixed  $bind
      */
     public function __construct(
         string $name,
@@ -47,7 +50,7 @@ class FormSwitch extends Component
             $this->checked = in_array($value, Arr::wrap($oldData));
         }
 
-        if (!session()->hasOldInput() && $this->isNotWired()) {
+        if (! session()->hasOldInput() && $this->isNotWired()) {
             $boundValue = $this->getBoundValue($bind, $inputName);
 
             if ($boundValue instanceof Arrayable) {
@@ -69,6 +72,6 @@ class FormSwitch extends Component
      */
     protected function generateIdByName(): string
     {
-        return 'auto_id_' . $this->name . '_' . $this->value;
+        return 'auto_id_'.$this->name.'_'.$this->value;
     }
 }
