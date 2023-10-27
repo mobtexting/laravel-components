@@ -28,6 +28,10 @@ return [
             'view' => 'laravel-components::{framework}.form-select-group',
             'class' => Components\FormSelectGroup::class,
         ],
+        'form-selected' => [
+            'view' => 'laravel-components::{framework}.form-selected',
+            'class' => Components\FormSelected::class,
+        ],
         'form-select-item' => [
             'view' => 'laravel-components::{framework}.form-select-item',
             'class' => Components\FormSelectItem::class,
